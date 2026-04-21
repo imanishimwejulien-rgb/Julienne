@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registry | District Lost & Found</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">District Lost & Found</a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="report.html">Report an Item</a>
+            <a class="nav-link active" href="registry.html">View Registry</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container my-5">
+    <div class="row mb-4 align-items-center">
+        <div class="col-md-8">
+            <h2 class="fw-bold text-primary">Item Registry</h2>
+            <p class="text-muted">Browse all reported items in your district.</p>
+        </div>
+        <div class="col-md-4">
+            <input type="text" id="registrySearch" class="form-control" placeholder="Search items (e.g. 'watch')...">
+        </div>
+    </div>
+
+    <div class="row g-4" id="registryGrid">
+        <div class="col-md-4 item-card">
+            <div class="position-relative item-container shadow-sm rounded bg-white h-100">
+                <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=500" alt="Watch">
+                <div class="item-label bg-dark text-white">Found: Silver Watch</div>
+                <div class="p-3">
+                    <p class="small text-muted mb-1">Location: Main Bus Park</p>
+                    <p class="card-text">Found near the entrance. Please contact with a description of the brand.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 item-card">
+            <div class="position-relative item-container shadow-sm rounded bg-white h-100">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=500" alt="Cat">
+                <div class="item-label label-lost text-white">Lost: Ginger Cat</div>
+                <div class="p-3">
+                    <p class="small text-muted mb-1">Location: Sector 4</p>
+                    <p class="card-text">Answers to "Simba". Very friendly but easily scared by loud noises.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 item-card">
+            <div class="position-relative item-container shadow-sm rounded bg-white h-100">
+                <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=500" alt="Wallet">
+                <div class="item-label bg-dark text-white">Found: Leather Wallet</div>
+                <div class="p-3">
+                    <p class="small text-muted mb-1">Location: District Market</p>
+                    <p class="card-text">Brown leather wallet. Found near the vegetable stalls on Saturday morning.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-light py-4 text-center border-top">
+    <div class="container">
+        <p class="text-muted mb-0">Local Community Registry Project &copy; 2026</p>
+    </div>
+</footer>
+
+<script>
+    // Search Filter logic for the presentation
+    document.getElementById('registrySearch').addEventListener('keyup', function() {
+        let filter = this.value.toLowerCase();
+        let items = document.querySelectorAll('.item-card');
+        
+        items.forEach(item => {
+            let text = item.querySelector('.item-label').innerText.toLowerCase();
+            if(text.includes(filter)) {
+                item.style.display = "";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

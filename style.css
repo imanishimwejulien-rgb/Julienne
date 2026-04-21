@@ -1,0 +1,79 @@
+/* Custom Styles for District Lost & Found Registry */
+
+:root {
+    --primary-blue: #007bff;
+    --dark-blue: #0056b3;
+    --lost-red: #e35d6a;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Section: Visibility fix for title and description */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    color: #ffffff !important;
+    padding: 80px 0;
+    margin-bottom: 0;
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    color: #ffffff !important;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    color: #f8f9fa !important;
+    font-size: 1.25rem;
+}
+
+/* Image Gallery and Stylized Labels */
+.item-container {
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-color: #eee;
+}
+
+.item-container:hover {
+    transform: scale(1.03);
+}
+
+.item-container img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.item-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.95;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.label-lost {
+    background-color: var(--lost-red) !important;
+}
+
+/* General Layout Tweaks */
+.navbar-brand {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    border: none;
+}
